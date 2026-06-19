@@ -2,6 +2,11 @@
 <html>
 <head>
     <title>LoveChat</title>
+    <style>
+        body { text-align: center; font-family: sans-serif; background-color: #f0f0f0; transition: background 0.5s; }
+        #chat { width: 80%; max-width: 400px; height: 300px; border: 1px solid #ccc; margin: 20px auto; overflow-y: scroll; background: white; }
+        .msg { padding: 5px; border-bottom: 1px solid #eee; }
+    </style>
 </head>
 <body>
 
@@ -12,11 +17,11 @@
     <button onclick="renkDegistir()">Random</button>
     
     <div id="chat"></div>
+    <br>
     <input type="text" id="msg" placeholder="Mesaj yaz...">
     <button onclick="gonder()">Gönder</button>
 
     <script>
-        // Senin JavaScript kodların buraya (fonksiyonların)
         function gonder(){
             let text = document.getElementById("msg").value;
             if(text == "") return;
