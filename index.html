@@ -6,15 +6,17 @@
     <style>
         body { text-align: center; font-family: sans-serif; padding: 20px; }
         button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+        .cikis-btn { border-radius: 50%; width: 50px; height: 50px; background-color: red; color: white; border: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <h1>LoveChat Sohbet Sayfası</h1>
+    <h1>LoveChat Sohbet</h1>
 
-    <button onclick="moryap()">Purple Tema</button>
-    <button onclick="siyahYap()">Dark Tema</button>
-    <button onclick="renkDegistir()">Random</button>
+    <button onclick="moryap()">Mor</button>
+    <button onclick="siyahYap()">Siyah</button>
+    <button onclick="renkDegistir()">Rastgele</button>
+    <button class="cikis-btn" onclick="cikisYap()">X</button>
 
     <br><br>
 
@@ -28,6 +30,10 @@
         function renkDegistir() {
             let renks = "#" + Math.floor(Math.random()*16777215).toString(16);
             document.body.style.background = renks;
+        }
+        function cikisYap() {
+            window.open('', '_self', '');
+            window.close();
         }
     </script>
 
