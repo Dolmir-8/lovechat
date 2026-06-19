@@ -1,45 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>LoveChat</title>
     <style>
-        body { text-align: center; font-family: sans-serif; background-color: #f0f0f0; transition: background 0.5s; }
-        #chat { width: 80%; max-width: 400px; height: 300px; border: 1px solid #ccc; margin: 20px auto; overflow-y: scroll; background: white; }
-        .msg { padding: 5px; border-bottom: 1px solid #eee; }
+        body { text-align: center; font-family: sans-serif; padding: 20px; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <h1>LoveChat</h1>
-    
+    <h1>LoveChat Sohbet Sayfası</h1>
+
     <button onclick="moryap()">Purple Tema</button>
     <button onclick="siyahYap()">Dark Tema</button>
     <button onclick="renkDegistir()">Random</button>
-    
-    <div id="chat"></div>
-    <br>
-    <input type="text" id="msg" placeholder="Mesaj yaz...">
-    <button onclick="gonder()">Gönder</button>
+
+    <br><br>
+
+    <div id="chat-container">
+        <iframe src="https://www5.cbox.ws/box/?boxid=964053&boxtag=tzVVD6" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+    </div>
 
     <script>
-        function gonder(){
-            let text = document.getElementById("msg").value;
-            if(text == "") return;
-            let div = document.createElement("div");
-            div.className = "msg";
-            div.innerText = text;
-            document.getElementById("chat").appendChild(div);
-            document.getElementById("msg").value = "";
-        }
-        function moryap(){ document.body.style.background = "#6a0dad"; }
-        function siyahYap(){ document.body.style.background = "#111"; }
-        function renkDegistir(){ 
-            let renk = "#" + Math.floor(Math.random()*16777215).toString(16);
-            document.body.style.background = renk;
+        function moryap() { document.body.style.background = "purple"; }
+        function siyahYap() { document.body.style.background = "black"; }
+        function renkDegistir() {
+            let renks = "#" + Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.background = renks;
         }
     </script>
-
-    <script src="//code.tidio.co/w5qqujhgbfbepa2wxbleqlibzkjmfio.js" async></script>
 
 </body>
 </html>
