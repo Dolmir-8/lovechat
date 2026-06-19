@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>LoveChat</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#6a0dad;
+    color:white;
+    text-align:center;
+    margin:0;
+    transition:0.4s;
+}
+
+.box{
+    margin-top:50px;
+}
+
+button{
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    margin:5px;
+}
+
+input{
+    padding:10px;
+    border-radius:10px;
+    border:none;
+}
+
+.chat{
+    margin-top:20px;
+}
+
+.msg{
+    background:white;
+    color:black;
+    display:inline-block;
+    padding:8px 12px;
+    border-radius:10px;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>LoveChat</h1>
+
+<div class="box">
+
+    <button onclick="morYap()">Purple Tema</button>
+    <button onclick="siyahYap()">Dark Tema</button>
+    <button onclick="renkDegistir()">Random</button>
+
+</div>
+
+<div class="chat">
+
+    <input id="msg" placeholder="Mesaj yaz...">
+    <button onclick="gonder()">Gönder</button>
+
+    <div id="chat"></div>
+
+</div>
+
+<script>
+
+function gonder(){
+    let text = document.getElementById("msg").value;
+    if(text == "") return;
+
+    let div = document.createElement("div");
+    div.className = "msg";
+    div.innerText = text;
+
+    document.getElementById("chat").appendChild(div);
+
+    document.getElementById("msg").value = "";
+}
+
+function morYap(){
+    document.body.style.background = "#6a0dad";
+}
+
+function siyahYap(){
+    document.body.style.background = "#111";
+}
+
+function renkDegistir(){
+    let renk = "#" + Math.floor(Math.random()*16777215).toString(16);
+    document.body.style.background = renk;
+}
+
+</script>
+
+</body>
+</html>
